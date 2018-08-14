@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="margins">
+    <desktop-header></desktop-header>
+    <client-list></client-list>
+    <about></about>
+    <resume></resume>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import DesktopHeader from './components/DesktopHeader.vue'
+import ClientList from './components/ClientList.vue'
+import About from './components/About.vue'
+import Resume from './components/Resume.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    About, 
+    DesktopHeader,
+    ClientList,
+    Resume
+  },
+  data () {
+    return {
+
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import '/assets/scss/app';
+  .margins {
+    margin: 55px 80px;
+  }
 </style>
