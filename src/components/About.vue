@@ -1,10 +1,14 @@
 <template>
-  <div class="columns">
-    <div class="column" v-for="(row,index) in table" :key="index">
-      <img class="smile" src="../assets/icons/smile.svg">
-      <p>{{ row.about }}</p>
+  <section class="columns">
+    <div class="column rows" v-for="(row,index) in table" :key="index">
+      <img class="smile row" src="../assets/icons/smile.svg">
+      <svg height="2" width="55" class="row">
+        <line x1="55" y1="0" x2="0" y2="0" />
+      </svg>
+      <p class="row">{{ row.about }}</p>
+      <p class="row">{{ row.aboutTwo }}</p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -34,10 +38,19 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/variables.scss";
+
   img.smile {
     width: 30px;
-    & + p {
-      color: #63707E;
+    display: block;
+    & + svg {
+      stroke: $secondary;
+      stroke-width: 2px;
+    }
+    & ~ p {
+    color: $subtext-gray;
+    padding-bottom: 16px;
     }
   }
+
 </style>

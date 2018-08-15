@@ -1,20 +1,16 @@
 <template>
-  <div class="columns">
-    <div class="rows column is-8">
-      <div class="row" v-for="(row,index) in table" :key="index">
-        <div class="fontsize columns" @click="isOpen = !isOpen" >
-          <span class="column">{{ row.employer }}</span> 
-          <span class="column">{{ row.jobTitle }}</span> 
-          <span class="column">
-            <span v-show="row.present=='TRUE'">Present, </span>
-            <span>{{ row.duration }}</span>
-          </span>
-        </div>
-        <div v-if="!isOpen">{{ row.jobInfo }}</div>
-      </div> 
+  <section class="rows">
+    <div class="row" @click="isOpen = !isOpen" v-for="(row,index) in table" :key="index">
+      <div class="columns">
+        <span class="column is-4">{{ row.employer }}</span>
+        <span class="column is-4">{{ row.jobTitle }}</span>
+        <span class="column right"><span v-show="row.present=='TRUE'">Present, </span>{{ row.duration }}</span>
+        <span class="column right"><img src="../assets/icons/arrow.svg" :class="{'arrowup': isOpen}"></span>
+      </div>
+      <div class="jobinfo" v-if="isOpen">{{ row.jobInfo }}</div>
       <hr />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -47,7 +43,24 @@ export default {
 <style lang="scss" scoped>
   @import "../assets/scss/variables.scss";
 
-  .fontsize {
-    font-size: $primary-f-size;
+  .jobinfo {
+    color: $subtext-gray;
+    margin-bottom: 12px;
   }
+  hr {
+    margin: 0;
+  }
+  .columns:not(:last-child) {
+    margin-bottom: 0; 
+  }
+  .column {
+    margin-top: 12px;
+  }
+  .right {
+    text-align: right;
+  }
+  .arrowup {
+    transform: rotate(180deg);
+  }
+
 </style>

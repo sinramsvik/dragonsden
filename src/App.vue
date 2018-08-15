@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="margins">
-    <desktop-header></desktop-header>
-    <client-list></client-list>
-    <about></about>
+    <desktop-header class="spacer"></desktop-header>
+    <client-list class="spacer"></client-list>
+    <about class="spacer"></about>
     <resume></resume>
   </div>
 </template>

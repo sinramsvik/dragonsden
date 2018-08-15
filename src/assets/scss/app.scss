@@ -13,6 +13,12 @@ p {
   font-size: $primary-f-size;
 } 
 hr {
-  background-color: #c4c4c4;
+  background-color: $secondary;
   height: 1px;
+}
+.spacer {
+  padding-bottom: 36px;
+}
+a {
+  color: $text-link;
 }

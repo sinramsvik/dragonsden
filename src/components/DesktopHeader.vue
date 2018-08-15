@@ -1,11 +1,11 @@
 <template>
-    <div class="level columns">
+    <header class="level columns">
       <div class="level-left column" v-for="(row,index) in table" :key="index">
         <h1>{{ row.header }}</h1>
         <h2>{{ row.aboutHeader }}</h2>
       </div>
-      <social class="level-right"></social>
-    </div>
+      <social class="level-right justified"></social>
+    </header>
 </template>
 
 <script>
@@ -37,8 +37,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../assets/scss/variables.scss";
+
   .level-left h2 {
-    color: #63707E;
+    color: $subtext-gray;
+  }
+  .justified {
+    justify-content: top;
   }
 </style>
 

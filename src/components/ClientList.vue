@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <hr />
     <div class="columns is-multiline">
       <div class="column is-2-desktop is-3 is-4" v-for="(row,index) in table" :key="index">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <hr />
-  </div>
+  </section>
 </template>
 
 <script>
